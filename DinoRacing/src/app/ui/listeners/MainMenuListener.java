@@ -3,19 +3,22 @@ package app.ui.listeners;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import app.valueobjects.App;
+import app.valueobjects.ScreenManager;
+
 public class MainMenuListener implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		switch (e.getActionCommand()){
 		case "ManagementScreen":
-			//TODO Navigaate to management screen
+			ScreenManager.getMgr().displayManagementScreen();
 			break;
 		case "BeginRace":
-			// TODO
+			ScreenManager.getMgr().displayBettingScreen();
 			break;
 		case "Exit":
-			//TODO
+			App.getSession().closeApplication();
 			break;
 			
 			

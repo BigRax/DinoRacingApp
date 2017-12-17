@@ -1,10 +1,14 @@
 package app.objects;
 
+import app.enums.DinoBreed;
+import app.enums.Operation;
+
 public class Dino {
 	private int raceNumber;
 	private String dinoName;
 	private DinoOdds odds;
 	private boolean active;
+	private DinoBreed breed;
 
 	public int getRaceNumber() {
 		return raceNumber;
@@ -38,6 +42,30 @@ public class Dino {
 		this.active = active;
 	}
 
+	public DinoBreed getBreed() {
+		return breed;
+	}
+
+	public void setBreed(DinoBreed breed) {
+		this.breed = breed;
+	}
+
+	public String getFileLine() {
+		String activeVal;
+		String operationVal;
+		if(active) {
+			activeVal = "T";
+		} else {
+			activeVal = "f";
+		}
+		
+		if(odds.getOperation().equals(Operation.MULTIPLY)) {
+			operationVal = "*";
+		} else {
+			operationVal = "/";
+		}
+		return raceNumber + "|" + dinoName + "|" + breed.getBreedName() + "|" + activeVal + "|" + operationVal + "|" +odds.getValue();
+	}
 	
 	
 	 

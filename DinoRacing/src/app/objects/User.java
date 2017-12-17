@@ -14,4 +14,8 @@ public class User {
 	public void setUserName(String userName) {
 		UserName = userName;
 	}
+	
+	public String toString() {
+		return UserName;
+	}
 }

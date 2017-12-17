@@ -20,7 +20,7 @@ public class MainMenu extends JFrame {
 
 	private JPanel contentPane;
 
-	private MainMenuListener mainWindowListener;
+	private MainMenuListener mainMenuListener = new MainMenuListener();
 	/**
 	 * Launch the application.
 	 */
@@ -37,9 +37,7 @@ public class MainMenu extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+	
 	public MainMenu() {
 		setTitle("Dino Racing");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -55,20 +53,20 @@ public class MainMenu extends JFrame {
 		contentPane.add(lblWelcome);
 		
 		JButton btnManagementScreen = new JButton("Management Screen");
-		btnManagementScreen.addActionListener(mainWindowListener);
+		btnManagementScreen.addActionListener(mainMenuListener);
 		btnManagementScreen.setActionCommand("ManagementScreen");
 		btnManagementScreen.setBounds(130, 85, 261, 50);
 		contentPane.add(btnManagementScreen);
 		
 		JButton btnBeginRace = new JButton("Begin Race");
 		btnBeginRace.setBounds(130, 154, 261, 52);
-		btnBeginRace.addActionListener(mainWindowListener);
+		btnBeginRace.addActionListener(mainMenuListener);
 		btnBeginRace.setActionCommand("BeginRace");
 		contentPane.add(btnBeginRace);
 		
 		JButton btnExit = new JButton("Exit");
 		btnExit.setBounds(130, 223, 261, 46);
-		btnExit.addActionListener(mainWindowListener);
+		btnExit.addActionListener(mainMenuListener);
 		btnExit.setActionCommand("Exit");
 		contentPane.add(btnExit);
 		
